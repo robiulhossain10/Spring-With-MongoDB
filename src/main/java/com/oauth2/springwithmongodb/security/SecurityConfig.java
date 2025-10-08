@@ -35,7 +35,8 @@ public class SecurityConfig {
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .authorizeHttpRequests(authz -> authz
                         // public endpoints
-                        .requestMatchers("/api/users/login", "/api/users/register","/api/users").permitAll()
+                        .requestMatchers("/api/users/**").permitAll()
+                        .requestMatchers("/").permitAll()
                         // swagger & docs
                         .requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll()
                         // everything else requires authentication
