@@ -1,0 +1,12 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/testspring
+
+
+app:
+  jwt:
+    secret: "your-very-strong-secret-key-of-at-least-32-bytes"
+    expiration: 86400000           # Access token expiry in milliseconds (1 day)
+    refreshExpiration: 604800000   # Refresh token expiry in milliseconds (7 days)
+
